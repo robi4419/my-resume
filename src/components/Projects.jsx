@@ -1,44 +1,60 @@
-const projects = [
-  {
-    icon: "✅",
-    title: "Habit Tracker",
-    description: `A clean, intuitive web app to build and track your habits.
-    Features daily and weekly tracking and a minimal UI
-    designed to keep you focused on what matters.`,
-    tags: ["React", "Javascript", "CSS", "Node.js", "Express.js"],
-    link: "https://habit-tracker-4419.netlify.app",
-    linkContent: "Live App →",
-  },
-  {
-    icon: "💻",
-    title: "More on GitHub",
-    description: `Explore all of my open-source work, experiments, and side projects.
-    From UI components to full-stack applications — all publicly available on GitHub.`,
-    tags: ["React", "Javascript", "CSS", "Node.js", "Express.js"],
-    link: "https://github.com/robi4419",
-    linkContent: "View GitHub →",
-  },
-];
+import { useFetchProjects } from "../fetchProjects";
 
 function Projects() {
+  const { projects, isLoading } = useFetchProjects();
+
+  if (isLoading) {
+    return (
+      <section className="projects-section" id="projects">
+        <div className="section-label">Work</div>
+        <h2 className="section-title">My Projects</h2>
+        <p>Loading projects...</p>
+      </section>
+    );
+  }
+
   return (
     <section className="projects-section" id="projects">
       <div className="section-label">Work</div>
       <h2 className="section-title">My Projects</h2>
       <div className="projects-grid">
         {projects.map((project) => (
-          <div className="project-card">
-            <div className="project-icon">{project.icon}</div>
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-desc">{project.description}</p>
-            <div className="project-tags">
-              {project.tags.map((tag) => (
-                <span className="tag">{tag}</span>
-              ))}
+          <div key={project.id} className="project-card">
+            <div className="project-image-wrapper">
+              <img
+                className="project-image"
+                src={project.image}
+                alt={project.title}
+              />
+              <div className="project-hover-overlay">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="overlay-btn primary"
+                >
+                  Live App
+                </a>
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="overlay-btn secondary"
+                >
+                  View Code
+                </a>
+              </div>
             </div>
-            <a href={project.link} target="_blank" className="project-link">
-              {project.linkContent}
-            </a>
+            <div className="project-info">
+              <h3 className="project-title">{project.title}</h3>
+              <div className="project-tags">
+                {project.tags.map((tag, index) => (
+                  <div key={index} className="tag">
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         ))}
       </div>

@@ -7,8 +7,8 @@ function Navbar() {
         VR
       </a>
       <ul className="nav-links">
-        {navLinks.map((link) => (
-          <li>
+        {navLinks.map((link, index) => (
+          <li key={index}>
             <a href={"#" + link}>{link}</a>
           </li>
         ))}

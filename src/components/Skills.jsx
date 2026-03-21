@@ -26,8 +26,8 @@ function Skills() {
         <div className="section-label">Toolkit</div>
         <h2 className="section-title">Skills & Technologies</h2>
         <div className="skills-grid">
-          {skills.map((skill) => (
-            <div className="skill-tag">
+          {skills.map((skill, index) => (
+            <div key={index} className="skill-tag">
               <span className="skill-dot"></span>
               {skill}
             </div>

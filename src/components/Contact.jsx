@@ -3,19 +3,19 @@ import { MdEmail } from "react-icons/md";
 
 function Contact() {
   return (
-    <section class="contact-section" id="contact">
-      <div class="contact-inner">
-        <div class="section-label">Get In Touch</div>
-        <h2 class="section-title">Let's work together</h2>
-        <p class="contact-subtitle">
+    <section className="contact-section" id="contact">
+      <div className="contact-inner">
+        <div className="section-label">Get In Touch</div>
+        <h2 className="section-title">Let's work together</h2>
+        <p className="contact-subtitle">
           Open to new opportunities, collaborations, and interesting projects.
           Reach out through any of the links below.
         </p>
-        <div class="social-links">
+        <div className="social-links">
           <a
             href="https://github.com/robi4419"
             target="_blank"
-            class="social-btn"
+            className="social-btn"
           >
             <FaGithub size="1.25rem" />
             GitHub
@@ -23,16 +23,16 @@ function Contact() {
           <a
             href="https://www.linkedin.com/in/robert-vasai-9a6895284"
             target="_blank"
-            class="social-btn"
+            className="social-btn"
           >
             <FaLinkedin size="1.25rem" />
             LinkedIn
           </a>
-          <a href="mailto:vasairobert@yahoo.com" class="social-btn">
+          <a href="mailto:vasairobert@yahoo.com" className="social-btn">
             <MdEmail size="1.25rem" />
             vasairobert@yahoo.com
           </a>
-          <a class="social-btn">
+          <a className="social-btn">
             <FaPhone size="1rem" />
             +40 732 542 089
           </a>

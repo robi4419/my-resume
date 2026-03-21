@@ -21,17 +21,17 @@ const timeline = [
 
 function Experience() {
   return (
-    <section class="experience-section" id="experience">
-      <div class="experience-inner">
-        <div class="section-label">Background</div>
-        <h2 class="section-title">Experience</h2>
-        <div class="timeline">
-          {timeline.map((item) => (
-            <div class="timeline-item">
-              <div class="timeline-date">{item.date}</div>
-              <div class="timeline-role">{item.role}</div>
-              <div class="timeline-company">{item.company}</div>
-              <div class="timeline-desc">{item.description}</div>
+    <section className="experience-section" id="experience">
+      <div className="experience-inner">
+        <div className="section-label">Background</div>
+        <h2 className="section-title">Experience</h2>
+        <div className="timeline">
+          {timeline.map((item, index) => (
+            <div key={index} className="timeline-item">
+              <div className="timeline-date">{item.date}</div>
+              <div className="timeline-role">{item.role}</div>
+              <div className="timeline-company">{item.company}</div>
+              <div className="timeline-desc">{item.description}</div>
             </div>
           ))}
         </div>
